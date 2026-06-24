@@ -71,12 +71,12 @@ The JSON it will return would look something like this:
 To request this endpoint, do a ```GET``` request to ```https://accurateclock-api-public.live-by-unix.workers.dev/api/meta```    
 
 ## How to request
-To request the endpoint, here are some examples:
+To request the endpoint, here are some examples (using endpoint ```/api/time, you can change```):
 For JavaScript:
 ```js
 
 const r = await fetch(
-  "https://accurateclock-api-public.live-by-unix.workers.dev/api/time" // or whatever endpoint you'd like
+  "https://accurateclock-api-public.live-by-unix.workers.dev/api/time" 
 );
 const d = await r.json();
 console.log(d.epoch_ms);
@@ -87,14 +87,14 @@ For Python:
 import requests
 
 d = requests.get(
-    "https://accurateclock-api-public.live-by-unix.workers.dev/api/time" # or whatever endpoint you'd like
+    "https://accurateclock-api-public.live-by-unix.workers.dev/api/time" 
 ).json()
 
 print(d["epoch_ms"])
 ```
 For cURL:
 ```bash
-curl https://accurateclock-api-public.live-by-unix.workers.dev/api/time # or whatever endpoint you'd like
+curl https://accurateclock-api-public.live-by-unix.workers.dev/api/time 
 ```
 
 ## Tech Stack
