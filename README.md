@@ -5,7 +5,7 @@ A lightweight API for the glorious AccurateClock website. No auth, rate limits, 
 
 To visit, click [here](https://accurateclock.pages.dev) for the website (NON-API) and [here](https://accurateclockapi.pages.dev) for the API demo/documentation page.    
 
-This README covers why accurateclock API, usage, how to request, tech stack, and licensing.
+This README covers why AccurateClock API, usage, how to request, tech stack, and licensing.
 
 ## Why AccurateClock API?
 1. If you loved AccurateClock, you'll love the API.
