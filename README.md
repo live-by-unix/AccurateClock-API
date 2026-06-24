@@ -1,11 +1,31 @@
 ## Welcome to AccurateClock API
-A lightweight API for the glorious AccurateClock website. No auth, rate litmits, and NO cors. 
+A lightweight API for the glorious AccurateClock website. No auth, rate limits, and NO cors. 
 To visit, click [here](https://accurateclock.pages.dev) for the website (NON-API) and [here](https://accurateclockapi.pages.dev) for the API demo/documentation page.    
 
-This README covers usage, how to request, tech stack, and licensing.
+This README covers why accurateclock API, usage, how to request, tech stack, and licensing.
+
+## Why AccurateClock API?
+1. If you loved AccurateClock, you'll love the API.
+2. It's stable & production grade
+3. It's NO-CORS
+4. It's easy to request
+5. No auth, No rate limit
+6. It's accurate
+7. It's lightweight
+8. Multiple endpoints
+9. Served via Cloudflare fast & global CDN
+10. It has a near zero learning curve
+11. 100% HTTPS
+
 
 ## Usage
-There are multiple endpoint for the API.    
+There are multiple endpoints for the API.    
+A table is below:
+Endpoint - Description
+
+| /api/time | Returns the time    
+| /api/offset | Returns the offset    
+| /api/meta | Returns metadata   
 
 The endpoint ```/api/time``` is to get the time without the fuss.    
 The JSON it will return would look something like this:   
@@ -43,7 +63,7 @@ The JSON it will return would look something like this:
 To request this endpoint, do a ```GET``` request to ```https://accurateclock-api-public.live-by-unix.workers.dev/api/meta```    
 
 ## How to request
-To request for the endpoint, here are some examples:
+To request the endpoint, here are some examples:
 For JavaScript:
 ```js
 
@@ -80,6 +100,6 @@ The tech stack is
 ## License
 This project is licensed under the [BSD-3-Clause License](https://opensource.org/license/bsd-3-clause) - see the [LICENSE](LICENSE) file for details.
 
-And that's all for AccurateClock API
+And that's all for AccurateClock API!
 
  
