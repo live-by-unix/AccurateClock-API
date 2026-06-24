@@ -71,7 +71,7 @@ The JSON it will return would look something like this:
 To request this endpoint, do a ```GET``` request to ```https://accurateclock-api-public.live-by-unix.workers.dev/api/meta```    
 
 ## How to request
-To request the endpoint, here are some examples (using endpoint ```/api/time, you can change```):
+To request the endpoint, here are some examples (using endpoint ```/api/time```, you can change):
 For JavaScript:
 ```js
 
