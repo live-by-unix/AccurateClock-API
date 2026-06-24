@@ -27,8 +27,7 @@
     padding: 0;
     background: var(--bg);
     color: var(--text);
-    line-height: 1.6;
-    transition: background 0.2s, color 0.2s;
+    transition: background .2s, color .2s;
   }
 
   header {
@@ -49,9 +48,8 @@
 
   pre, code {
     background: var(--code);
-    padding: 6px 10px;
+    padding: 10px;
     border-radius: 6px;
-    display: block;
     overflow-x: auto;
   }
 
@@ -78,7 +76,7 @@
     font-family: monospace;
   }
 
-  /* GitHub corner */
+  /* GitHub Corner (fixed) */
   .github-corner svg {
     fill: var(--text);
     color: var(--bg);
@@ -88,6 +86,7 @@
     border: 0;
     width: 80px;
     height: 80px;
+    transition: fill .2s, color .2s;
   }
 
   /* Theme toggle */
@@ -101,7 +100,7 @@
     border-radius: 6px;
     cursor: pointer;
     font-size: 18px;
-    transition: background 0.2s, color 0.2s;
+    transition: background .2s, color .2s;
   }
 </style>
 </head>
@@ -134,7 +133,7 @@
   <h2>Endpoints</h2>
 
   <h3>/api/time</h3>
-  <div class="endpoint">GET https://accurateclock.live-by-unix.workers.dev/api/time</div>
+  <div class="endpoint">GET https://accurateclock-api-public.live-by-unix.workers.dev/api/time</div>
 
   <pre>{
   "epoch_ms": 1710000000000,
@@ -145,14 +144,14 @@
 }</pre>
 
   <h3>/api/offset</h3>
-  <div class="endpoint">GET https://accurateclock.live-by-unix.workers.dev/api/offset</div>
+  <div class="endpoint">GET https://accurateclock-api-public.live-by-unix.workers.dev/api/offset</div>
 
   <pre>{
   "server_epoch_ms": 1710000000000
 }</pre>
 
   <h3>/api/meta</h3>
-  <div class="endpoint">GET https://accurateclock.live-by-unix.workers.dev/api/meta</div>
+  <div class="endpoint">GET https://accurateclock-api-public.live-by-unix.workers.dev/api/meta</div>
 
   <pre>{
   "service": "accurateclock",
@@ -165,17 +164,17 @@
   <h2>How to Use</h2>
 
   <h3>JavaScript</h3>
-  <pre><code>const r = await fetch("https://accurateclock.live-by-unix.workers.dev/api/time");
+  <pre><code>const r = await fetch("https://accurateclock-api-public.live-by-unix.workers.dev/api/time");
 const d = await r.json();
 console.log(d.epoch_ms);</code></pre>
 
   <h3>Python</h3>
   <pre><code>import requests
-d = requests.get("https://accurateclock.live-by-unix.workers.dev/api/time").json()
+d = requests.get("https://accurateclock-api-public.live-by-unix.workers.dev/api/time").json()
 print(d["epoch_ms"])</code></pre>
 
   <h3>cURL</h3>
-  <pre><code>curl https://accurateclock.live-by-unix.workers.dev/api/time</code></pre>
+  <pre><code>curl https://accurateclock-api-public.live-by-unix.workers.dev/api/time</code></pre>
 
   <h2>Live Demo</h2>
   <div class="demo-box">
@@ -191,7 +190,7 @@ async function demoTime() {
   out.textContent = "Loading…";
 
   try {
-    const r = await fetch("https://accurateclock.live-by-unix.workers.dev/api/time", { cache: "no-store" });
+    const r = await fetch("https://accurateclock-api-public.live-by-unix.workers.dev/api/time", { cache: "no-store" });
     const d = await r.json();
     out.textContent = JSON.stringify(d, null, 2);
   } catch {
