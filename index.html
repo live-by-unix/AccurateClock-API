@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AccurateClock API</title>
+
+<style>
+  :root {
+    --bg: #fafafa;
+    --text: #222;
+    --card: #fff;
+    --code: #eee;
+    --border: #ddd;
+  }
+  body.dark {
+    --bg: #111;
+    --text: #eee;
+    --card: #1a1a1a;
+    --code: #222;
+    --border: #333;
+  }
+
+  body {
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  header {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2.6rem;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    margin-top: 40px;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 6px;
+  }
+
+  pre, code {
+    background: var(--code);
+    padding: 6px 10px;
+    border-radius: 6px;
+    display: block;
+    overflow-x: auto;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+  }
+
+  .demo-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+
+  .endpoint {
+    background: var(--code);
+    padding: 6px 10px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-family: monospace;
+  }
+
+  /* GitHub corner */
+  .github-corner svg {
+    fill: var(--text);
+    color: var(--bg);
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+    width: 80px;
+    height: 80px;
+  }
+
+  /* Theme toggle */
+  #themeToggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.2s, color 0.2s;
+  }
+</style>
+</head>
+
+<body>
+
+<button id="themeToggle">☾</button>
+
+<!-- GitHub Corner -->
+<a href="https://github.com/live-by-unix/AccurateClock-API" class="github-corner" aria-label="View source on GitHub">
+  <svg viewBox="0 0 250 250" aria-hidden="true">
+    <path d="M0 0l115 115h15l12 27 108 108V0z"></path>
+    <path d="M128 109c-15-9-28-17-40-17-28 0-50 23-50 52 0 23 15 43 36 50 3 1 5-1 5-3v-17c-15 3-18-7-18-7-2-6-5-8-5-8-4-3 0-3 0-3 5 0 8 5 8 5 4 8 11 6 14 5 0-4 2-6 3-7-12-1-24-6-24-27 0-6 2-11 6-15-1-1-3-7 1-15 0 0 5-2 16 6 5-2 11-3 17-3s12 1 17 3c11-8 16-6 16-6 4 8 2 14 1 15 4 4 6 9 6 15 0 21-12 26-24 27 2 2 4 5 4 10v15c0 2 2 4 5 3 21-7 36-27 36-50 0-29-22-52-50-52z"></path>
+  </svg>
+</a>
+
+<header>
+  <h1>AccurateClock API</h1>
+  <p>The ultra‑minimal, ultra‑precise public time API.</p>
+</header>
+
+<div class="container">
+
+  <h2>Overview</h2>
+  <p>
+    AccurateClock API provides globally‑distributed, low‑latency, NTP‑backed timestamps from Cloudflare’s edge network.
+    No keys, no auth, no rate limits — just accurate time.
+  </p>
+
+  <h2>Endpoints</h2>
+
+  <h3>/api/time</h3>
+  <div class="endpoint">GET https://accurateclock.live-by-unix.workers.dev/api/time</div>
+
+  <pre>{
+  "epoch_ms": 1710000000000,
+  "iso_utc": "2026-06-24T18:00:00.000Z",
+  "latency_ms": 2.8,
+  "region": "SFO",
+  "version": "1"
+}</pre>
+
+  <h3>/api/offset</h3>
+  <div class="endpoint">GET https://accurateclock.live-by-unix.workers.dev/api/offset</div>
+
+  <pre>{
+  "server_epoch_ms": 1710000000000
+}</pre>
+
+  <h3>/api/meta</h3>
+  <div class="endpoint">GET https://accurateclock.live-by-unix.workers.dev/api/meta</div>
+
+  <pre>{
+  "service": "accurateclock",
+  "api_version": "1",
+  "runtime": "cloudflare-worker",
+  "region": "SFO",
+  "features": ["time", "offset", "meta"]
+}</pre>
+
+  <h2>How to Use</h2>
+
+  <h3>JavaScript</h3>
+  <pre><code>const r = await fetch("https://accurateclock.live-by-unix.workers.dev/api/time");
+const d = await r.json();
+console.log(d.epoch_ms);</code></pre>
+
+  <h3>Python</h3>
+  <pre><code>import requests
+d = requests.get("https://accurateclock.live-by-unix.workers.dev/api/time").json()
+print(d["epoch_ms"])</code></pre>
+
+  <h3>cURL</h3>
+  <pre><code>curl https://accurateclock.live-by-unix.workers.dev/api/time</code></pre>
+
+  <h2>Live Demo</h2>
+  <div class="demo-box">
+    <button onclick="demoTime()">Fetch /api/time</button>
+    <pre id="demoOutput">Click the button…</pre>
+  </div>
+
+</div>
+
+<script>
+async function demoTime() {
+  const out = document.getElementById("demoOutput");
+  out.textContent = "Loading…";
+
+  try {
+    const r = await fetch("https://accurateclock.live-by-unix.workers.dev/api/time", { cache: "no-store" });
+    const d = await r.json();
+    out.textContent = JSON.stringify(d, null, 2);
+  } catch {
+    out.textContent = "Error fetching time.";
+  }
+}
+
+const toggle = document.getElementById("themeToggle");
+toggle.onclick = () => {
+  document.body.classList.toggle("dark");
+  toggle.textContent = document.body.classList.contains("dark") ? "☀" : "☾";
+};
+</script>
+
+</body>
+</html>
