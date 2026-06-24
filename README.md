@@ -1,5 +1,8 @@
 ## Welcome to AccurateClock API
 A lightweight API for the glorious AccurateClock website. No auth, rate limits, and NO cors. 
+
+![Cloudflare Pages](https://img.shields.io/badge/Cloudflare-Pages-F38020?logo=cloudflare&logoColor=white) ![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers-F38020?logo=cloudflare&logoColor=white) ![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD--3--Clause-blue.svg) ![API](https://img.shields.io/badge/API-REST-green)
+
 To visit, click [here](https://accurateclock.pages.dev) for the website (NON-API) and [here](https://accurateclockapi.pages.dev) for the API demo/documentation page.    
 
 This README covers why accurateclock API, usage, how to request, tech stack, and licensing.
@@ -16,6 +19,9 @@ This README covers why accurateclock API, usage, how to request, tech stack, and
 9. Served via Cloudflare fast & global CDN
 10. It has a near zero learning curve
 11. 100% HTTPS
+12. Returns metadata
+13. Returns server offset
+14. And best of all, RETURNS THE TIME!
 
 
 ## Usage
