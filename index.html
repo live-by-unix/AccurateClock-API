@@ -10,14 +10,16 @@
     --bg: #fafafa;
     --text: #222;
     --card: #fff;
-    --code: #eee;
+    --code-bg: #f4f4f4;
+    --code-border: #ccc;
     --border: #ddd;
   }
   body.dark {
     --bg: #111;
     --text: #eee;
     --card: #1a1a1a;
-    --code: #222;
+    --code-bg: #1e1e1e;
+    --code-border: #444;
     --border: #333;
   }
 
@@ -46,11 +48,19 @@
     padding-bottom: 6px;
   }
 
-  pre, code {
-    background: var(--code);
-    padding: 10px;
-    border-radius: 6px;
+  pre {
+    background: var(--code-bg);
+    border: 1px solid var(--code-border);
+    padding: 14px;
+    border-radius: 8px;
     overflow-x: auto;
+    font-size: 15px;
+    line-height: 1.45;
+    white-space: pre;
+  }
+
+  code {
+    font-family: Consolas, monospace;
   }
 
   .container {
@@ -68,7 +78,8 @@
   }
 
   .endpoint {
-    background: var(--code);
+    background: var(--code-bg);
+    border: 1px solid var(--code-border);
     padding: 6px 10px;
     border-radius: 6px;
     display: inline-block;
@@ -83,7 +94,6 @@
     position: absolute;
     top: 0;
     right: 0;
-    border: 0;
     width: 80px;
     height: 80px;
     transition: fill .2s, color .2s;
@@ -164,13 +174,19 @@
   <h2>How to Use</h2>
 
   <h3>JavaScript</h3>
-  <pre><code>const r = await fetch("https://accurateclock-api-public.live-by-unix.workers.dev/api/time");
+  <pre><code>const r = await fetch(
+  "https://accurateclock-api-public.live-by-unix.workers.dev/api/time"
+);
 const d = await r.json();
 console.log(d.epoch_ms);</code></pre>
 
   <h3>Python</h3>
   <pre><code>import requests
-d = requests.get("https://accurateclock-api-public.live-by-unix.workers.dev/api/time").json()
+
+d = requests.get(
+    "https://accurateclock-api-public.live-by-unix.workers.dev/api/time"
+).json()
+
 print(d["epoch_ms"])</code></pre>
 
   <h3>cURL</h3>
@@ -190,7 +206,10 @@ async function demoTime() {
   out.textContent = "Loading…";
 
   try {
-    const r = await fetch("https://accurateclock-api-public.live-by-unix.workers.dev/api/time", { cache: "no-store" });
+    const r = await fetch(
+      "https://accurateclock-api-public.live-by-unix.workers.dev/api/time",
+      { cache: "no-store" }
+    );
     const d = await r.json();
     out.textContent = JSON.stringify(d, null, 2);
   } catch {
