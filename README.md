@@ -16,7 +16,7 @@ This README covers why AccurateClock API, usage, how to request, tech stack, and
 6. It's accurate
 7. It's lightweight
 8. Multiple endpoints
-9. Served via Cloudflare fast & global CDN
+9. Served via Cloudflare's fast & global CDN
 10. It has a near zero learning curve
 11. 100% HTTPS
 12. Returns metadata
