@@ -21,11 +21,13 @@ This README covers why accurateclock API, usage, how to request, tech stack, and
 ## Usage
 There are multiple endpoints for the API.    
 A table is below:
-Endpoint - Description
 
-| /api/time | Returns the time    
-| /api/offset | Returns the offset    
-| /api/meta | Returns metadata   
+| Endpoint      | Description            |
+|---------------|------------------------|
+| `/api/time`   | Returns the time       |
+| `/api/offset` | Returns the offset     |
+| `/api/meta`   | Returns metadata       |
+
 
 The endpoint ```/api/time``` is to get the time without the fuss.    
 The JSON it will return would look something like this:   
