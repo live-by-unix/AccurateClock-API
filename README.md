@@ -31,7 +31,7 @@ A table is below:
 | Endpoint      | Description            |
 |---------------|------------------------|
 | `/api/time`   | Returns the time       |
-| `/api/offset` | Returns the offset     |
+| `/api/offset` | Returns the time without extra data (just the unix epoch) |
 | `/api/meta`   | Returns metadata       |
 
 
@@ -48,7 +48,7 @@ The JSON it will return would look something like this:
 ``` 
 To request this endpoint, do a ```GET``` request to ```https://accurateclock-api-public.live-by-unix.workers.dev/api/time```      
 
-The endpoint ```/api/offset``` is to get the offset in ms.    
+The endpoint ```/api/offset``` is to get just the unix epoch in ms.    
 The JSON it would return would look something like this:   
 ```json
 {
