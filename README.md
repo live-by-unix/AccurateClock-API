@@ -20,7 +20,7 @@ This README covers why AccurateClock API, usage, how to request, tech stack, and
 10. It has a near zero learning curve
 11. 100% HTTPS
 12. Returns metadata
-13. Returns server offset
+13. Returns raw epoch
 14. And best of all, IT RETURNS THE TIME!
 
 
