@@ -13,7 +13,7 @@ This README covers why AccurateClock API, usage, how to request, tech stack, and
 3. It's NO-CORS
 4. It's easy to request
 5. No auth, No rate limit
-6. It's accurate
+6. It's accurate (synced up with Cloudflare NTP time servers)
 7. It's lightweight
 8. Multiple endpoints
 9. Served via Cloudflare's fast & global CDN
