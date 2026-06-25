@@ -31,7 +31,7 @@ A table is below:
 | Endpoint      | Description            |
 |---------------|------------------------|
 | `/api/time`   | Returns the time       |
-| `/api/offset` | Returns the time without extra data (just the unix epoch) |
+| `/api/raw-time` | Returns the time without extra data (just the unix epoch) |
 | `/api/meta`   | Returns metadata       |
 
 
@@ -48,14 +48,14 @@ The JSON it will return would look something like this:
 ``` 
 To request this endpoint, do a ```GET``` request to ```https://accurateclock-api-public.live-by-unix.workers.dev/api/time```      
 
-The endpoint ```/api/offset``` is to get just the unix epoch in ms.    
+The endpoint ```/api/raw-time``` is to get just the unix epoch in ms.    
 The JSON it would return would look something like this:   
 ```json
 {
   "server_epoch_ms": 1710000000000
 }
 ```
-To request this endpoint, do a ```GET``` request to ```https://accurateclock-api-public.live-by-unix.workers.dev/api/offset```      
+To request this endpoint, do a ```GET``` request to ```https://accurateclock-api-public.live-by-unix.workers.dev/api/raw-time```      
 
 The endpoint ```/api/meta``` brings general metadata about the service and the region.
 The JSON it will return would look something like this:
@@ -65,7 +65,7 @@ The JSON it will return would look something like this:
   "api_version": "1",
   "runtime": "cloudflare-worker",
   "region": "SFO",
-  "features": ["time", "offset", "meta"]
+  "features": ["time", "raw-time", "meta"]
 }
 ```
 To request this endpoint, do a ```GET``` request to ```https://accurateclock-api-public.live-by-unix.workers.dev/api/meta```    
