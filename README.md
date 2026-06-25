@@ -5,14 +5,14 @@ A lightweight API for the glorious AccurateClock website. No auth, rate limits, 
 
 To visit, click [here](https://accurateclock.pages.dev) for the website (NON-API) and [here](https://accurateclockapi.pages.dev) for the API demo/documentation page.    
 
-This README covers why AccurateClock API, usage, how to request, tech stack, and licensing.
+This README covers why AccurateClock API, usage, use case, how to request, tech stack, and licensing.
 
 ## Why AccurateClock API?
 1. If you loved AccurateClock, you'll love the API.
 2. It's stable & production grade
 3. It's NO-CORS
 4. It's easy to request
-5. No auth, No rate limit
+5. No auth, no rate limits
 6. It's accurate (synced up with Cloudflare NTP time servers)
 7. It's lightweight
 8. Multiple endpoints
@@ -20,7 +20,7 @@ This README covers why AccurateClock API, usage, how to request, tech stack, and
 10. It has a near zero learning curve
 11. 100% HTTPS
 12. Returns metadata
-13. Returns raw epoch
+13. Returns raw epoch timestamp
 14. And best of all, IT RETURNS THE TIME!
 
 
@@ -69,6 +69,10 @@ The JSON it will return would look something like this:
 }
 ```
 To request this endpoint, do a ```GET``` request to ```https://accurateclock-api-public.live-by-unix.workers.dev/api/meta```    
+
+## Use cases
+Perfect for clocks, dashboards, uptime monitors, browser apps, and projects that need a reliable server-side timestamp. 
+I even made a website to demo my API in action! Visit by clicking [here](https://demo-of-accurateclock-api.pages.dev/)
 
 ## How to request
 To request the endpoint, here are some examples (using endpoint ```/api/time```, you can change):
