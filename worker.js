@@ -18,14 +18,14 @@ export default {
 
     // --- ROUTER ---
     if (path === "/api/time") return handleTime(request, headers);
-    if (path === "/api/offset") return handleOffset(request, headers);
+    if (path === "/api/raw-time") return handleOffset(request, headers);
     if (path === "/api/meta") return handleMeta(request, headers);
 
     // Root or unknown path
     return new Response(
       JSON.stringify({
         error: "Not found",
-        available_endpoints: ["/api/time", "/api/offset", "/api/meta"]
+        available_endpoints: ["/api/time", "/api/raw-time", "/api/meta"]
       }),
       { status: 404, headers }
     );
@@ -55,7 +55,7 @@ function handleTime(request, headers) {
 }
 
 // -------------------------
-// /api/offset
+// /api/raw-time
 // -------------------------
 function handleOffset(request, headers) {
   const body = {
@@ -78,7 +78,7 @@ function handleMeta(request, headers) {
     api_version: "1",
     runtime: "cloudflare-worker",
     region: request.cf?.colo || "unknown",
-    features: ["time", "offset", "meta"]
+    features: ["time", "raw-time", "meta"]
   };
 
   return new Response(JSON.stringify(body), {
