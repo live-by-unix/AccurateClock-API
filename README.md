@@ -103,6 +103,7 @@ curl https://accurateclock-api-public.live-by-unix.workers.dev/api/time
 ## How to see code
 Sometimes you want to check if my API is legit and suggest fixes. 
 And I support that, which is why I have disclosed the exact worker code I use for the API. 
+The code is at ```worker.js````
 
 
 ## Tech Stack
