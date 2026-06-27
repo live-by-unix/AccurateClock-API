@@ -5,7 +5,7 @@ A lightweight API for the glorious AccurateClock website. No auth, rate limits, 
 
 To visit, click [here](https://accurateclock.pages.dev) for the website (NON-API) and [here](https://accurateclockapi.pages.dev) for the API demo/documentation page.    
 
-This README covers why AccurateClock API, usage, use case, how to request, tech stack, and licensing.
+This README covers why AccurateClock API, usage, use case, how to request, how to see code, tech stack, and licensing.
 
 ## Why AccurateClock API?
 1. If you loved AccurateClock, you'll love the API.
@@ -100,6 +100,10 @@ For cURL:
 ```bash
 curl https://accurateclock-api-public.live-by-unix.workers.dev/api/time 
 ```
+## How to see code
+Sometimes you want to check if my API is legit and suggest fixes. 
+And I support that, which is why I have disclosed the exact worker code I use for the API. 
+
 
 ## Tech Stack
 The tech stack is
